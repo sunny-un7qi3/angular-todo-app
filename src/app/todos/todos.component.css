@@ -1,0 +1,6 @@
+button {
+  margin-left: 1em;
+}
+.list-group-item.active >.blockquote-footer {
+    color: white;
+}

@@ -1,12 +1,8 @@
-<p>todos!</p>
 <ul class="list-unstyled">
-  <li *ngFor="let todo of todos" >
-      <div class="list-group">
-        <label class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" [(ngModel)]="todo.completed">
-          {{todo.title}}
-          <span class="blockquote-footer">{{todo.createdAt | date}}</span>
-        </label>
-      </div>
+  <li class="list-group-item" *ngFor="let todo of todos" (click)="onSelect(todo)" [class.active]="todo === selectTodo" >
+    <input class="form-check-input me-1" type="checkbox"  [(ngModel)]="todo.completed">
+    {{todo.title}}
+    <span class="blockquote-footer">{{todo.createdAt | date}}</span>
   </li>
 </ul>
+<app-todo-detail [todo]="selectTodo"></app-todo-detail>

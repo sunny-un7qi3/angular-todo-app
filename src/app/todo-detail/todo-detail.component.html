@@ -1,0 +1,10 @@
+
+<div *ngIf="todo">
+  <h2>{{todo.title}}</h2>
+  <div><span>{{todo.completed ? "완료함" : "아직안함"}}</span></div>
+  <div><span>{{todo.createdAt | date}}</span></div>
+  <div>
+    <label for="todo-title">할 일 수정하기</label>
+    <input id="todo-title" [(ngModel)]="todo.title" placeholder="할 일을 입력하세요">
+  </div>
+</div>
